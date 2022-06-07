@@ -30,10 +30,16 @@ meson build -Dprefix=%{_prefix}
 ninja -C build
 
 %install
+mkdir -p %{buildroot}%{_datadir}/licenses/%{name}
+cp LatencyFleX/LICENSE %{buildroot}%{_datadir}/licenses/%{name}/LICENSE
+mkdir -p %{buildroot}%{_docdir}/%{name}
+cp LatencyFleX/README.md %{buildroot}%{_docdir}/%{name}/README.md
 cd LatencyFleX/layer
 DESTDIR=%{buildroot} meson install -C build --skip-subprojects
 
 %files
+%license LICENSE
+%doc README.md
 %{_libdir}/liblatencyflex_layer.so
 %{_datadir}/vulkan/implicit_layer.d/latencyflex.json
 
