@@ -124,16 +124,11 @@ Supported platforms: Proton, Linux
 ## Installation
 
 ### LatencyFleX Vulkan layer (essential)
+![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/package/latencyflex-vulkan-layer/status_image/last_build.png?)
 
-For Debian-like distros, copy the following files from [release artifacts](https://github.com/ishitatsuyuki/LatencyFleX/releases) to your root filesystem.
+You can get releases for Fedora from my [COPR](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/).
 
-```
-/usr/lib/x86_64-linux-gnu/liblatencyflex_layer.so
-/usr/share/vulkan/implicit_layer.d/latencyflex.json
-```
-
-For Arch-like distros, you need to copy `/usr/lib/x86_64-linux-gnu/liblatencyflex_layer.so -> /usr/lib/liblatencyflex_layer.so`
-and additionally update the path specified in `/usr/share/vulkan/implicit_layer.d/latencyflex.json`.
+For other distributions, please see the [upstream repository](https://github.com/ishitatsuyuki/LatencyFleX).
 
 ### LatencyFleX Wine extensions (required for Proton Reflex integration)
 
