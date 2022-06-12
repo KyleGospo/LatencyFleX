@@ -2,7 +2,7 @@ Name:       latencyflex-vulkan-layer
 Version:    {{{ git_dir_version }}}
 Release:    1%{?dist}
 Summary:    Vendor agnostic latency reduction middleware
-License:    Apache License 2.0
+License:    ASL 2.0
 URL:        https://github.com/KyleGospo/LatencyFleX
 
 BuildRequires:  git
@@ -11,7 +11,12 @@ BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  vulkan-devel
 BuildRequires:  vulkan-headers
+# Package and patch needed only on Fedora
+%if 0%{?fedora}
 BuildRequires:  vulkan-validation-layers-devel
+Patch0:         nesting.patch
+%endif
+%{?is_opensuse:BuildRequires:  vulkan-validationlayers-devel}
 
 %description
 Vendor agnostic latency reduction middleware. An alternative to NVIDIA Reflex.
@@ -23,6 +28,9 @@ Vendor agnostic latency reduction middleware. An alternative to NVIDIA Reflex.
 git clone https://github.com/KyleGospo/LatencyFleX.git
 cd LatencyFleX
 git submodule update --init --recursive
+%if 0%{?fedora}
+%patch
+%endif
 
 %build
 cd LatencyFleX/layer
