@@ -18,6 +18,9 @@ Patch0:         nesting.patch
 %endif
 %{?is_opensuse:BuildRequires:  vulkan-validationlayers-devel}
 
+# Don't allow this package to be used along-side the development package.
+Conflicts:  latencyflex-vulkan-layer-dev
+
 %description
 Vendor agnostic latency reduction middleware. An alternative to NVIDIA Reflex.
 
