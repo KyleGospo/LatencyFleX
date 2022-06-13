@@ -10,3 +10,13 @@ rules:
       - KyleGospo
     conflictReviewers:
       - KyleGospo
+  - base: dev
+    upstream: ishitatsuyuki:dev
+    mergeMethod: merge
+    mergeUnstable: false
+    assignees:
+      - KyleGospo
+    reviewers:
+      - KyleGospo
+    conflictReviewers:
+      - KyleGospo
