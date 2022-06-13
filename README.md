@@ -124,7 +124,7 @@ Supported platforms: Proton, Linux
 ## Installation
 
 ### LatencyFleX Vulkan layer (essential)
-![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/package/latencyflex-vulkan-layer/status_image/last_build.png?)
+![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/package/latencyflex-vulkan-layer-dev/status_image/last_build.png?)
 
 You can get releases for Fedora and OpenSUSE from my [Copr](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/).
 

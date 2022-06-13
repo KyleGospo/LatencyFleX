@@ -37,7 +37,7 @@ git submodule update --init --recursive
 
 %build
 cd LatencyFleX/layer
-meson build -Dprefix=%{_prefix}
+meson build -Dprefix=%{_prefix} -Dperfetto=false
 ninja -C build
 
 %install
