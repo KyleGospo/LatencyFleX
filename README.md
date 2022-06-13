@@ -20,7 +20,10 @@ To learn more about LatencyFleX's internals, check out [the blog post](https://i
 ## Known issues
 
 - Minor stutters might happen.
+
+  **Tip:** If you are using AMD GPUs, try modifying the power profile to reduce power management induced stutters: https://gitlab.freedesktop.org/drm/amd/-/issues/1500#note_1228253
 - GPU utilization will be lower (around 95% when GPU bound).
+- It might take one second or two to adapt to large frame rate increases (e.g. if the game sets a background frame limit).
 
 ## Building from source
 
@@ -46,11 +49,12 @@ Tested games:
 | Apex Legends [^1]        | ✅       | Proton NVAPI   |
 | Titanfall 2 w/ Northstar | ✅       | Proton ([Native](https://r2northstar.gitbook.io/r2northstar-wiki/using-northstar/playing-on-linux))|
 | Overwatch [^1]           | ✅       | Proton NVAPI   |
-| Splitgate                | ✅       | Linux UE4 Hook |
+| Splitgate [^3]           | ❌       | N/A            |
 | Ghostrunner              | ✅       | Proton NVAPI   |
 | God of War               | ✅       | Proton NVAPI   |
 
 [^1]: Uses anti-cheat. Use at your own risk.
+[^3]: Game was previously supported with manual UE4 Linux hook. This is no longer possible in an easy way as the game does not ship with symbols now.
 
 Game supported but not in list? File a PR to update the table.
 
@@ -120,16 +124,11 @@ Supported platforms: Proton, Linux
 ## Installation
 
 ### LatencyFleX Vulkan layer (essential)
+![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/package/latencyflex-vulkan-layer/status_image/last_build.png?)
 
-For Debian-like distros, copy the following files from [release artifacts](https://github.com/ishitatsuyuki/LatencyFleX/releases) to your root filesystem.
+You can get releases for Fedora and OpenSUSE from my [Copr](https://copr.fedorainfracloud.org/coprs/kylegospo/LatencyFleX/).
 
-```
-/usr/lib/x86_64-linux-gnu/liblatencyflex_layer.so
-/usr/share/vulkan/implicit_layer.d/latencyflex.json
-```
-
-For Arch-like distros, you need to copy `/usr/lib/x86_64-linux-gnu/liblatencyflex_layer.so -> /usr/lib/liblatencyflex_layer.so`
-and additionally update the path specified in `/usr/share/vulkan/implicit_layer.d/latencyflex.json`.
+For other distributions, please see the [upstream repository](https://github.com/ishitatsuyuki/LatencyFleX).
 
 ### LatencyFleX Wine extensions (required for Proton Reflex integration)
 
