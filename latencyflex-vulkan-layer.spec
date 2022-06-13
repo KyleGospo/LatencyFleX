@@ -32,7 +32,7 @@ git clone https://github.com/KyleGospo/LatencyFleX.git
 cd LatencyFleX
 git submodule update --init --recursive
 %if 0%{?fedora}
-%patch
+%patch0
 %endif
 
 %build
