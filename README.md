@@ -23,7 +23,6 @@ To learn more about LatencyFleX's internals, check out [the blog post](https://i
 
   **Tip:** If you are using AMD GPUs, try modifying the power profile to reduce power management induced stutters: https://gitlab.freedesktop.org/drm/amd/-/issues/1500#note_1228253
 - GPU utilization will be lower (around 95% when GPU bound).
-- It might take one second or two to adapt to large frame rate increases (e.g. if the game sets a background frame limit).
 
 ## Building from source
 
@@ -160,7 +159,7 @@ For other distributions, please see the [upstream repository](https://github.com
 
 ### DXVK-NVAPI with LatencyFleX integration (required for Proton Reflex integration)
 
-Obtain binaries from [GitHub Actions](https://github.com/jp7677/dxvk-nvapi/actions?query=branch%3Amaster).
+Obtain binaries from [GitHub Releases](https://github.com/jp7677/dxvk-nvapi/releases). Minimum version with LatencyFlex integration is 0.5.3.
 
 For Proton, copy `nvapi64.dll` into `dist/lib64/wine/nvapi`.
 
