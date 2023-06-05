@@ -31,7 +31,7 @@ Vendor agnostic latency reduction middleware. An alternative to NVIDIA Reflex.
 git clone https://github.com/KyleGospo/LatencyFleX.git
 cd LatencyFleX
 git submodule update --init --recursive
-%if 0%{?fedora}
+%if 0%{?fedora} <= 37
 %patch0
 %endif
 
